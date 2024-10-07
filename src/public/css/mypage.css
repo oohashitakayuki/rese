@@ -1,0 +1,43 @@
+.mypage__container {
+  display: flex;
+}
+
+.reservation-list {
+  width: 45%;
+}
+
+.reservation-info__heading {
+  display: flex;
+  align-items: center;
+}
+
+.reservation-info__number {
+  margin: 0 100px 0 20px;
+}
+
+.reservation-cancellation__button-submit {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.reservation-detail {
+  text-align: left;
+}
+
+.favorite-cancellation__button-submit {
+  font-size: 2rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: red;
+}
+
+.favorite-list {
+  width: 45%;
+}
+
+.favorite-list__inner {
+  display: flex;
+}

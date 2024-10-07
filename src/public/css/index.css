@@ -1,0 +1,17 @@
+.shop-search {
+  text-align: right;
+  position: relative;
+  bottom: 50px;
+}
+
+.favorite__button-submit {
+  font-size: 2rem;
+  color: gray;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.favorite__button-submit.red {
+  color: red;
+}

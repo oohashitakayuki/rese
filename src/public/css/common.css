@@ -1,0 +1,152 @@
+body {
+  background: #eee;
+}
+
+.app {
+  margin: 30px 50px 60px 80px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+}
+
+.drawer__hidden {
+  display: none;
+}
+
+.drawer__open {
+  display: flex;
+  height: 55px;
+  width: 55px;
+  border-radius: 8px;
+  background: #3F5CF7;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  z-index: 100;
+  cursor: pointer;
+}
+
+.drawer__open span,
+.drawer__open span:before,
+.drawer__open span:after {
+  content: '';
+  display: block;
+  height: 3px;
+  width: 25px;
+  border-radius: 3px;
+  background: #fff;
+  transition: 0.5s;
+  position: absolute;
+}
+
+.drawer__open span:before {
+  bottom: 8px;
+}
+
+.drawer__open span:after {
+  top: 8px;
+}
+
+#drawer__input:checked~.drawer__open span {
+  background: rgba(255, 255, 255, 0);
+}
+
+#drawer__input:checked~.drawer__open span::before {
+  bottom: 0;
+  transform: rotate(45deg);
+}
+
+#drawer__input:checked~.drawer__open span::after {
+  top: 0;
+  transform: rotate(-45deg);
+}
+
+.nav__content {
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  padding-top: 180px;
+  position: fixed;
+  top: 0;
+  left: 100%;
+  z-index: 99;
+  background: #fff;
+  transition: .5s;
+}
+
+.nav__menu {
+  list-style: none;
+}
+
+.nav__item {
+  display: flex;
+  justify-content: space-around;
+  font-family: Arial;
+  font-size: 30px;
+  color: #3F5CF7;
+  padding-top: 10px;
+  text-decoration: none;
+}
+
+.nav__logout {
+  display: flex;
+  justify-content: space-around;
+  font-size: 30px;
+  color: #3F5CF7;
+  padding-top: 10px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+#drawer__input:checked~.nav__content {
+  left: 0;
+}
+
+.header__heading {
+  margin-left: 20px;
+  color: #3F5CF7;
+}
+
+.shop-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shop__item {
+  width: 23%;
+  margin: 7px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.shop__image {
+  height: 150px;
+  width: 100%;
+  object-fit: cover;
+}
+
+.shop__content {
+  padding: 10px;
+  background: #fff;
+}
+
+.shop__name {
+  display: inline;
+}
+
+.shop__area {
+  display: inline-block;
+}
+
+.shop__genre {
+  display: inline-block;
+}
+
+.shop__service {
+  display: flex;
+  justify-content: space-between;
+}

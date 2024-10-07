@@ -1,0 +1,34 @@
+.shop-detail__container {
+  display: flex;
+}
+
+.shop-profile {
+  width: 45%;
+}
+
+.shop-profile__image {
+  width: 100%;
+}
+
+.reservation-form {
+  width: 45%;
+  margin-left: 100px;
+  background: #3F5CF7;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.reservation-form__inner {
+  display: flex;
+  flex-direction: column;
+}
+
+.reservation-form__button {
+  width: 100%;
+  padding: 10px 0;
+  margin-top: 335px;
+  color: #fff;
+  background: #1B3FFF;
+  border: none;
+  cursor: pointer;
+}
