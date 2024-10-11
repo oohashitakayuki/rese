@@ -111,18 +111,6 @@ body {
   color: #3F5CF7;
 }
 
-.shop-list {
-  display: flex;
-  flex-wrap: wrap;
-}
-
-.shop__item {
-  width: 23%;
-  margin: 7px;
-  border-radius: 10px;
-  overflow: hidden;
-}
-
 .shop__image {
   height: 150px;
   width: 100%;

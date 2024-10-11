@@ -4,6 +4,18 @@
   bottom: 50px;
 }
 
+.shop-list {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.shop__item {
+  width: 23%;
+  margin: 7px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
 .favorite__button-submit {
   font-size: 2rem;
   color: gray;

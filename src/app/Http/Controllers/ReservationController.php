@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\ReservationRequest;
 use App\Models\Reservation;
 use App\Models\Shop;
 use App\Models\User;
@@ -10,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 
 class ReservationController extends Controller
 {
-    public function store(Request $request, $shopId)
+    public function store(ReservationRequest $request, $shopId)
     {
         $user = \Auth::User();
         if (!$user->is_reservation($shopId)) {

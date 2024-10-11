@@ -6,6 +6,10 @@
   width: 45%;
 }
 
+.reservation-info {
+  width: 45%;
+}
+
 .reservation-info__heading {
   display: flex;
   align-items: center;
@@ -40,4 +44,13 @@
 
 .favorite-list__inner {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.favorite__item {
+  width: 45%;
+  margin: 7px;
+  border-radius: 10px;
+  overflow: hidden;
 }

@@ -21,25 +21,51 @@
 
     <div class="reservation-form">
       <h3 class="reservation-form__heading">予約</h3>
-        <form class="reservation-form__group" action="{{ route('done', $shop->id) }}" method="post">
+        <form class="reservation-form__inner" action="{{ route('done', $shop->id) }}" method="post">
           <input type="hidden" name="shop_id" value="{{ $shop->id }}">
           @csrf
-          <div class="reservation-form__inner">
+          <div class="reservation-form__group">
             <input id="reservation-date" class="reservation-form__date" type="date" name="date">
+            <p class="reservation-form__error-message">
+            @error('date')
+            {{ $message }}
+            @enderror
+            </p>
+          </div>
+
+          <div class="reservation-form__group">
             <select id="reservation-time" class="reservation-form__time" name="time">
-              <option value="15:00">15:00</option>
+              <option disabled selected>選択して下さい</option>
               <option value="16:00">16:00</option>
               <option value="17:00">17:00</option>
               <option value="18:00">18:00</option>
               <option value="19:00">19:00</option>
               <option value="20:00">20:00</option>
             </select>
+            <p class="reservation-form__error-message">
+            @error('time')
+            {{ $message }}
+            @enderror
+            </p>
+          </div>
+
+          <div class="reservation-form__group">
             <select id="reservation-number" class="reservation-form__number" name="number">
+              <option disabled selected>選択して下さい</option>
               <option value="1">1人</option>
               <option value="2">2人</option>
               <option value="3">3人</option>
               <option value="4">4人</option>
+              <option value="5">5人</option>
+              <option value="6">6人</option>
+              <option value="7">7人</option>
+              <option value="8">8人</option>
             </select>
+            <p class="reservation-form__error-message">
+            @error('number')
+            {{ $message }}
+            @enderror
+            </p>
           </div>
 
           <table class="reservation-form__confirm">
