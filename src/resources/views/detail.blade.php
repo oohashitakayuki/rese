@@ -26,11 +26,11 @@
           @csrf
           <div class="reservation-form__group">
             <input id="reservation-date" class="reservation-form__date" type="date" name="date">
-            <p class="reservation-form__error-message">
+            <div class="reservation-form__error-message">
             @error('date')
             {{ $message }}
             @enderror
-            </p>
+            </div>
           </div>
 
           <div class="reservation-form__group">
@@ -42,11 +42,11 @@
               <option value="19:00">19:00</option>
               <option value="20:00">20:00</option>
             </select>
-            <p class="reservation-form__error-message">
+            <div class="reservation-form__error-message">
             @error('time')
             {{ $message }}
             @enderror
-            </p>
+            </div>
           </div>
 
           <div class="reservation-form__group">
@@ -61,11 +61,11 @@
               <option value="7">7人</option>
               <option value="8">8人</option>
             </select>
-            <p class="reservation-form__error-message">
+            <div class="reservation-form__error-message">
             @error('number')
             {{ $message }}
             @enderror
-            </p>
+            </div>
           </div>
 
           <table class="reservation-form__confirm">
@@ -87,7 +87,7 @@
             </tr>
           </table>
 
-          <button class="reservation-form__button" type="submit">
+          <button class="reservation-form__submit" type="submit">
             予約する
           </button>
         </form>

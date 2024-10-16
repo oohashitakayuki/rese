@@ -4,6 +4,7 @@
 
 .shop-profile {
   width: 45%;
+  margin-left: 12px;
 }
 
 .shop-profile__image {
@@ -15,7 +16,13 @@
   margin-left: 100px;
   background: #3F5CF7;
   border-radius: 8px;
+  position: relative;
+  bottom: 30px;
   overflow: hidden;
+}
+
+.reservation-form__heading {
+  color: #fff;
 }
 
 .reservation-form__inner {
@@ -23,10 +30,31 @@
   flex-direction: column;
 }
 
-.reservation-form__button {
+.reservation-form__confirm {
+  display: inline-block;
+  text-align: left;
+  padding: 20px 0 10px 20px;
+  margin: 15px 60px 20px 25px;
+  background: #617AFF;
+}
+
+.reservation-form__confirm tr {
+  display: flex;
+  margin-bottom: 8px;
+}
+
+.reservation-form__confirm th {
+  color: #fff;
+}
+
+.reservation-form__confirm td {
+  color: #fff;
+}
+
+.reservation-form__submit {
   width: 100%;
   padding: 10px 0;
-  margin-top: 335px;
+  margin-top: 255px;
   color: #fff;
   background: #1B3FFF;
   border: none;

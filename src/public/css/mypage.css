@@ -1,18 +1,34 @@
+.mypage {
+  margin-top: 50px;
+}
+
+.mypage__user-authentication {
+  margin-right: 120px;
+  text-align: center;
+}
+
 .mypage__container {
   display: flex;
 }
 
 .reservation-list {
-  width: 45%;
+  width: 40%;
+}
+
+.reservation-list__inner {
+  margin: 27px 0 0 30px;
 }
 
 .reservation-info {
-  width: 45%;
+  width: 88%;
+  margin-bottom: 20px;
+  background: #3F5CF7;
 }
 
 .reservation-info__heading {
   display: flex;
   align-items: center;
+  color: #fff;
 }
 
 .reservation-info__number {
@@ -21,6 +37,7 @@
 
 .reservation-cancellation__button-submit {
   font-size: 2rem;
+  color: #fff;
   background: none;
   border: none;
   cursor: pointer;
@@ -39,18 +56,21 @@
 }
 
 .favorite-list {
-  width: 45%;
+  width: 60%;
+}
+
+.favorite-list__heading {
+  margin-left: 10px;
 }
 
 .favorite-list__inner {
   display: flex;
   flex-wrap: wrap;
-  justify-content: space-between;
 }
 
 .favorite__item {
-  width: 45%;
-  margin: 7px;
+  width: 40%;
+  margin: 10px 25px;
   border-radius: 10px;
   overflow: hidden;
 }

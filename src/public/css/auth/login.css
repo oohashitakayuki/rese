@@ -1,0 +1,35 @@
+.login-form {
+  display: flex;
+  width: 27%;
+  margin: 100px auto;
+  flex-direction: column;
+  background: #fff;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.login-form__heading {
+  padding-left: 18px;
+  color: #fff;
+  background: #3F5CF7;
+}
+
+.login-form__group {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 17px 10px;
+}
+
+.login-form__input {
+  width: 80%;
+  margin-left: 7px;
+  border: none;
+  outline: none;
+  border-bottom: 1px solid #000;
+}
+
+.login-form__button {
+  margin: 18px 25px 18px 0;
+  text-align: right;
+}

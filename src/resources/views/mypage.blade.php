@@ -63,7 +63,7 @@
             <p class="shop__genre">#{{ $favorite->shop->genre->name }}</p>
           </div>
           <div class="shop__service">
-            <button class="shop-detail__link" onclick="location.href='{{ route('detail', $favorite->shop->id) }}'">
+            <button class="shop-detail__link btn" onclick="location.href='{{ route('detail', $favorite->shop->id) }}'">
               詳しくみる
             </button>
             <form class="favorite-cancellation__button" action="{{ route('favorite.destroy', $favorite->shop->id) }}" method="post">

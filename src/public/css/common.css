@@ -8,7 +8,7 @@ body {
 
 .header {
   display: flex;
-  align-items: center;
+  padding: 10px 0 0 10px;
 }
 
 .drawer__hidden {
@@ -17,9 +17,9 @@ body {
 
 .drawer__open {
   display: flex;
-  height: 55px;
-  width: 55px;
-  border-radius: 8px;
+  height: 40px;
+  width: 40px;
+  border-radius: 6px;
   background: #3F5CF7;
   justify-content: center;
   align-items: center;
@@ -33,8 +33,8 @@ body {
 .drawer__open span:after {
   content: '';
   display: block;
-  height: 3px;
-  width: 25px;
+  height: 1px;
+  width: 20px;
   border-radius: 3px;
   background: #fff;
   transition: 0.5s;
@@ -42,10 +42,12 @@ body {
 }
 
 .drawer__open span:before {
+  width: 11px;
   bottom: 8px;
 }
 
 .drawer__open span:after {
+  width: 7px;
   top: 8px;
 }
 
@@ -54,11 +56,13 @@ body {
 }
 
 #drawer__input:checked~.drawer__open span::before {
+  width: 20px;
   bottom: 0;
   transform: rotate(45deg);
 }
 
 #drawer__input:checked~.drawer__open span::after {
+  width: 20px;
   top: 0;
   transform: rotate(-45deg);
 }
@@ -107,8 +111,18 @@ body {
 }
 
 .header__heading {
-  margin-left: 20px;
+  font-size: 27px;
+  margin: 0 20px;
   color: #3F5CF7;
+}
+
+.btn {
+  padding: 5px 13px;
+  color: #fff;
+  background: #1B3FFF;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
 }
 
 .shop__image {

@@ -35,7 +35,7 @@
           <p class="shop__genre">#{{ $shop->genre->name }}</p>
         </div>
         <div class="shop__service">
-          <button class="shop-detail__link" onclick="location.href='{{ route('detail', $shop->id) }}'">
+          <button class="shop-detail__link btn" onclick="location.href='{{ route('detail', $shop->id) }}'">
             詳しくみる
           </button>
           @if (Auth::check())

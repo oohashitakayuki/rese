@@ -9,12 +9,10 @@ use Illuminate\Support\Facades\Auth;
 
 class LoginController extends Controller
 {
-    public function login(LoginRequest $request)
+    public function store(LoginRequest $request)
     {
-        $credentials = $request->only('email', 'password');
-
-        if (Auth::attempt($credentials)) {
-            return redirect()->intended(config('fortify.home'));
+        if (Auth::attempt($request->only('email', 'password'))) {
+            return redirect()->intended('/');
         }
     }
 }
