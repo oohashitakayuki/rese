@@ -36,16 +36,4 @@ class ReservationController extends Controller
 
         return back();
     }
-
-    public function update(ReservationRequest $request, $shopId)
-    {
-        $reservation = Reservation::find($shopId);
-        $reservation->update([
-            'date' => $request->input('date'),
-            'time' => $request->input('time'),
-            'number' => $request->input('number'),
-        ]);
-
-        return redirect()->route('mypage');
-    }
 }
