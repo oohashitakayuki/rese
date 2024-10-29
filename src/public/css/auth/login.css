@@ -1,7 +1,7 @@
 .login-form {
   display: flex;
   width: 27%;
-  margin: 100px auto;
+  margin: 130px auto;
   flex-direction: column;
   background: #fff;
   border-radius: 5px;
@@ -15,10 +15,12 @@
 }
 
 .login-form__group {
+  margin: 17px 10px 17px 30px;
+}
+
+.login-form__group-content {
   display: flex;
-  justify-content: center;
   align-items: center;
-  margin: 17px 10px;
 }
 
 .login-form__input {
@@ -29,7 +31,15 @@
   border-bottom: 1px solid #000;
 }
 
+.login-form__error {
+  margin-left: 30px;
+}
+
 .login-form__button {
-  margin: 18px 25px 18px 0;
+  margin: 18px 36px 18px 0;
   text-align: right;
+}
+
+.login-form__button-submit {
+  padding: 5px 13px;
 }

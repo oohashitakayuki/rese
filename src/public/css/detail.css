@@ -1,3 +1,19 @@
+input,
+select {
+  height: 30px;
+  border: none;
+  padding: 0 7px;
+  border-radius: 5px;
+}
+
+input {
+  width: 40%;
+}
+
+select {
+  width: 100%;
+}
+
 .shop-detail__container {
   display: flex;
 }
@@ -11,17 +27,28 @@
   width: 100%;
 }
 
+.shop-profile__tag {
+  display: inline-block;
+  font-size: 16.5px;
+}
+
+.shop-profile__about {
+  font-size: 16.5px;
+}
+
 .reservation-form {
-  width: 45%;
-  margin-left: 100px;
+  width: 40%;
+  height: 650px;
+  margin-left: 80px;
   background: #3F5CF7;
-  border-radius: 8px;
+  border-radius: 5px;
   position: relative;
-  bottom: 30px;
+  bottom: 45px;
   overflow: hidden;
 }
 
 .reservation-form__heading {
+  padding: 10px 0 0 25px;
   color: #fff;
 }
 
@@ -30,20 +57,23 @@
   flex-direction: column;
 }
 
-.reservation-form__confirm {
-  display: inline-block;
-  text-align: left;
-  padding: 20px 0 10px 20px;
-  margin: 15px 60px 20px 25px;
-  background: #617AFF;
+.reservation-form__group {
+  margin: 0 50px 12px 25px;
 }
 
-.reservation-form__confirm tr {
-  display: flex;
-  margin-bottom: 8px;
+.reservation-form__confirm {
+  display: inline-block;
+  padding: 20px 0 20px 20px;
+  margin: 7px 60px 20px 25px;
+  background: #617AFF;
+  border-radius: 5px;
+  border-collapse: separate;
 }
 
 .reservation-form__confirm th {
+  text-align: left;
+  padding-right: 35px;
+  font-weight: normal;
   color: #fff;
 }
 
@@ -54,7 +84,7 @@
 .reservation-form__submit {
   width: 100%;
   padding: 10px 0;
-  margin-top: 255px;
+  margin-top: 230px;
   color: #fff;
   background: #1B3FFF;
   border: none;

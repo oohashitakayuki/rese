@@ -1,7 +1,8 @@
 .shop-search {
-  text-align: right;
-  position: relative;
-  bottom: 30px;
+  display: flex;
+  position: absolute;
+  top: 50px;
+  left: 900px;
 }
 
 .shop-list {
@@ -10,20 +11,20 @@
 }
 
 .shop__item {
-  width: 23%;
-  margin: 7px;
+  width: 265px;
+  margin: 10px;
   border-radius: 10px;
   overflow: hidden;
 }
 
 .favorite__button-submit {
   font-size: 2rem;
-  color: gray;
+  color: #CFCFCF;
   background: none;
   border: none;
   cursor: pointer;
 }
 
 .favorite__button-submit.red {
-  color: red;
+  color: #FF3535;
 }
