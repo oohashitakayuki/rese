@@ -12,7 +12,9 @@
   <form class="login-form__inner" action="/login" method="post" novalidate>
     @csrf
     <div class="login-form__group">
-      <span class="material-icons">email</span><input class="login-form__input" type="email" name="email" value="{{ old('email') }}"  placeholder="Email">
+      <div class="login-form__group-content">
+        <span class="material-icons">email</span><input class="login-form__input" type="email" name="email" value="{{ old('email') }}"  placeholder="Email">
+      </div>
       <div class="login-form__error">
         @error('email')
         {{ $message }}
@@ -20,7 +22,9 @@
       </div>
     </div>
     <div class="login-form__group">
-      <span class="material-icons">lock</span><input class="login-form__input" type="password" name="password"  placeholder="Password">
+      <div class="login-form__group-content">
+        <span class="material-icons">lock</span><input class="login-form__input" type="password" name="password"  placeholder="Password">
+      </div>
       <div class="login-form__error">
         @error('password')
         {{ $message }}

@@ -12,7 +12,9 @@
   <form class="register-form__inner" action="/register" method="post" novalidate>
     @csrf
     <div class="register-form__group">
-      <span class="material-icons">person</span><input class="register-form__input" type="text" name="name" value="{{ old('name') }}" placeholder="Username">
+      <div class="register-form__group-content">
+        <span class="material-icons">person</span><input class="register-form__input" type="text" name="name" value="{{ old('name') }}" placeholder="Username">
+      </div>
       <div class="register-form__error">
         @error('name')
         {{ $message }}
@@ -20,7 +22,9 @@
       </div>
     </div>
     <div class="register-form__group">
-      <span class="material-icons">email</span><input class="register-form__input" type="email" name="email" value="{{ old('email') }}" placeholder="Email">
+      <div class="register-form__group-content">
+        <span class="material-icons">email</span><input class="register-form__input" type="email" name="email" value="{{ old('email') }}" placeholder="Email">
+      </div>
       <div class="register-form__error">
         @error('email')
         {{ $message }}
@@ -28,7 +32,9 @@
       </div>
     </div>
     <div class="register-form__group">
-      <span class="material-icons">lock</span><input class="register-form__input" type="password" name="password" placeholder="Password">
+      <div class="register-form__group-content">
+        <span class="material-icons">lock</span><input class="register-form__input" type="password" name="password" placeholder="Password">
+      </div>
       <div class="register-form__error">
         @error('password')
         {{ $message }}

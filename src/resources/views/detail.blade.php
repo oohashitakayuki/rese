@@ -27,9 +27,9 @@
           <div class="reservation-form__group">
             <input id="reservation-date" class="reservation-form__date" type="date" name="date">
             <div class="reservation-form__error-message">
-            @error('date')
-            {{ $message }}
-            @enderror
+              @error('date')
+              {{ $message }}
+              @enderror
             </div>
           </div>
 
@@ -43,9 +43,9 @@
               <option value="20:00">20:00</option>
             </select>
             <div class="reservation-form__error-message">
-            @error('time')
-            {{ $message }}
-            @enderror
+              @error('time')
+              {{ $message }}
+              @enderror
             </div>
           </div>
 
@@ -62,9 +62,9 @@
               <option value="8">8人</option>
             </select>
             <div class="reservation-form__error-message">
-            @error('number')
-            {{ $message }}
-            @enderror
+              @error('number')
+              {{ $message }}
+              @enderror
             </div>
           </div>
 

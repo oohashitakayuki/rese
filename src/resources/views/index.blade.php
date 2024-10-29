@@ -35,9 +35,7 @@
           <p class="shop__genre">#{{ $shop->genre->name }}</p>
         </div>
         <div class="shop__service">
-          <button class="shop-detail__link btn" onclick="location.href='{{ route('detail', $shop->id) }}'">
-            詳しくみる
-          </button>
+          <a  href="{{ route('detail',$shop->id) }}" class="shop-detail__link btn">詳しくみる</a>
           @if (Auth::check())
           <form class="favorite__button" action="{{ Auth::user()->is_favorite($shop->id) ? route('favorite.destroy', $shop->id) : route('favorite.store', $shop->id) }}" method="post">
             <input type="hidden" name="shop_id" value="{{ $shop->id }}">
