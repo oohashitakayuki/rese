@@ -14,7 +14,9 @@ class FavoriteController extends Controller
     {
         $user = \Auth::User();
         if (!$user->is_favorite($shopId)) {
-            $user->favorite_shops()->attach($shopId);
+            $user->favorites()->create([
+                'shop_id' => $shopId,
+            ]);
         }
 
         return back();
@@ -23,8 +25,9 @@ class FavoriteController extends Controller
     public function destroy($shopId)
     {
         $user = \Auth::User();
-        if ($user->is_favorite($shopId)) {
-            $user->favorite_shops()->detach($shopId);
+        $favorite = Favorite::where('shop_id', $shopId)->where('user_id', $user->id)->first();
+        if($favorite) {
+            $favorite->delete();
         }
 
         return back();

@@ -31,7 +31,7 @@ class ReservationController extends Controller
         $user = \Auth::User();
         $reservation = Reservation::where('shop_id', $shopId)->where('user_id', $user->id)->first();
         if ($reservation) {
-        $reservation->delete();
+            $reservation->delete();
         }
 
         return back();
