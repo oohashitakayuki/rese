@@ -24,7 +24,7 @@ class ReservationRequest extends FormRequest
     public function rules()
     {
         return [
-            'date' => 'required|unique:reservations',
+            'date' => 'required',
             'time' => 'required',
             'number' => 'required',
         ];
@@ -34,7 +34,6 @@ class ReservationRequest extends FormRequest
     {
         return [
             'date.required' => '予約する日を選択してください',
-            'date.unique' => '同じ日に予約が入っています',
             'time.required' => '予約する時間を選択してください',
             'number.required' => '予約人数を選択してください',
         ];
