@@ -23,7 +23,7 @@
             @csrf
             @method('delete')
             <button class="reservation-cancellation__button-submit">
-              <span class="material-icons">highlight_off</span>
+              <span span class="material-icons">highlight_off</span>
             </button>
           </form>
         </div>
@@ -46,26 +46,26 @@
             </tr>
         </table>
 
-        <a href="#modal-{{ $reservation->id }}" class="reservation-info__change">予約の変更</a>
+        <a href="#reservation-change-modal-{{ $reservation->id }}" class="reservation-change modal-open">予約の変更</a>
 
-        <div id="modal-{{ $reservation->id }}" class="modal">
-          <a href="#!" class="modal-overlay"></a>
-          <div class="modal-window">
-            <div class="modal-content">
-              <form action="{{ route('reservation.update', $reservation->id) }}" method="POST">
+        <div id="reservation-change-modal-{{ $reservation->id }}" class="reservation-change__modal">
+          <a href="#!" class="reservation-change__modal-overlay"></a>
+          <div class="reservation-change__modal-window">
+            <div class="reservation-change__modal-content">
+              <form action="{{ route('reservation.update', $reservation->id) }}" method="post">
                 @csrf
                 @method('PUT')
-                <div class="reservation-form__group">
-                  <input id="reservation-date" class="reservation-form__date" type="date" name="date">
-                  <div class="reservation-form__error-message">
+                <div class="reservation-change__group">
+                  <input class="reservation-change__date" type="date" name="date">
+                  <div class="reservation-change__error-message">
                     @error('date')
                     {{ $message }}
                     @enderror
                   </div>
                 </div>
 
-                <div class="reservation-form__group">
-                  <select id="reservation-time" class="reservation-form__time" name="time">
+                <div class="reservation-change__group">
+                  <select class="reservation-change__time" name="time">
                     <option disabled selected>選択して下さい</option>
                     <option value="16:00">16:00</option>
                     <option value="17:00">17:00</option>
@@ -73,35 +73,80 @@
                     <option value="19:00">19:00</option>
                     <option value="20:00">20:00</option>
                   </select>
-                  <div class="reservation-form__error-message">
+                  <div class="reservation-change__error-message">
                     @error('time')
                     {{ $message }}
                     @enderror
                     </div>
                   </div>
 
-                <div class="reservation-form__group">
-                  <select id="reservation-number" class="reservation-form__number" name="number">
+                <div class="reservation-change__group">
+                  <select class="reservation-change__number" name="number">
                     <option disabled selected>選択して下さい</option>
-                    <option value="1">1人</option>
-                    <option value="2">2人</option>
-                    <option value="3">3人</option>
-                    <option value="4">4人</option>
-                    <option value="5">5人</option>
-                    <option value="6">6人</option>
-                    <option value="7">7人</option>
-                    <option value="8">8人</option>
+                    <option value="1人">1人</option>
+                    <option value="2人">2人</option>
+                    <option value="3人">3人</option>
+                    <option value="4人">4人</option>
+                    <option value="5人">5人</option>
+                    <option value="6人">6人</option>
+                    <option value="7人">7人</option>
+                    <option value="8人">8人</option>
                   </select>
-                  <div class="reservation-form__error-message">
+                  <div class="reservation-change__error-message">
                     @error('number')
                     {{ $message }}
                     @enderror
                   </div>
                 </div>
-                <button type="submit">変更する</button>
+                <div class="reservation-change__button">
+                  <button class="reservation-change__button-submit" type="submit">変更する</button>
+                </div>
               </form>
             </div>
-            <a href="#!" class="modal-close">×</a>
+            <a href="#!" class="reservation-change__modal-close">×</a>
+          </div>
+        </div>
+
+        <a href="#review-upload-modal-{{ $reservation->shop->id }}" class="review-upload modal-open">レビューを投稿</a>
+
+        <div id="review-upload-modal-{{ $reservation->shop->id }}" class="review-upload__modal">
+          <a href="#!" class="review-upload__modal-overlay"></a>
+          <div class="review-upload__modal-window">
+            <div class="review-upload__modal-content">
+              <form action="{{ route('review.store', $reservation->shop->id) }}" method="post">
+                @csrf
+                <div class="review-upload__group">
+                  <div class="review-upload__star">
+                    <span>
+                      <input id="review05" type="radio" name="star" value="5"><label for="review05">★</label>
+                      <input id="review04" type="radio" name="star" value="4"><label for="review04">★</label>
+                      <input id="review03" type="radio" name="star" value="3"><label for="review03">★</label>
+                      <input id="review02" type="radio" name="star" value="2"><label for="review02">★</label>
+                      <input id="review01" type="radio" name="star" value="1"><label for="review01">★</label>
+                    </span>
+                  </div>
+                </div>
+
+                <div class="review-upload__group">
+                  <textarea class="review-upload__comment" name="comment"></textarea>
+                </div>
+                <div class="review-upload__button">
+                  <button class="review-upload__button-submit">投稿する</button>
+                </div>
+              </form>
+            </div>
+            <a href="#!" class="review-upload__modal-close">×</a>
+          </div>
+        </div>
+
+        <a href="#qrcode-show-model-{{ $reservation->shop->id }}" class="qrcode-show modal-open">QRコード</a>
+
+        <div id="qrcode-show-model-{{ $reservation->shop->id }}" class="qrcode-show__modal">
+          <a href="#!" class="qrcode-show__modal-overlay"></a>
+          <div class="qrcode-show__modal-window">
+            <div class="qrcode-show__modal-content">
+              {!! QrCode::generate(route('detail', $reservation->shop->id)) !!}
+            </div>
           </div>
         </div>
       </div>

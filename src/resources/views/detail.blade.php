@@ -52,14 +52,14 @@
           <div class="reservation-form__group">
             <select id="reservation-number" class="reservation-form__number" name="number">
               <option disabled selected>選択して下さい</option>
-              <option value="1">1人</option>
-              <option value="2">2人</option>
-              <option value="3">3人</option>
-              <option value="4">4人</option>
-              <option value="5">5人</option>
-              <option value="6">6人</option>
-              <option value="7">7人</option>
-              <option value="8">8人</option>
+              <option value="1人">1人</option>
+              <option value="2人">2人</option>
+              <option value="3人">3人</option>
+              <option value="4人">4人</option>
+              <option value="5人">5人</option>
+              <option value="6人">6人</option>
+              <option value="7人">7人</option>
+              <option value="8人">8人</option>
             </select>
             <div class="reservation-form__error-message">
               @error('number')
@@ -87,9 +87,9 @@
             </tr>
           </table>
 
-          <button class="reservation-form__submit" type="submit">
-            予約する
-          </button>
+          <div class="reservation-form__button">
+            <button class="reservation-form__button-submit" type="submit">予約する</button>
+          </div>
         </form>
     </div>
   </div>
