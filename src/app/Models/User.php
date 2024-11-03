@@ -47,11 +47,6 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Reservation::class);
     }
 
-    public function reservation_shops()
-    {
-        return $this->belongsToMany(Shop::class, 'reservations', 'user_id', 'shop_id');
-    }
-
     public function is_reservation($shopId)
     {
         return $this->reservations()->where('shop_id', $shopId)->exists();
@@ -62,13 +57,18 @@ class User extends Authenticatable implements MustVerifyEmail
         return $this->hasMany(Favorite::class);
     }
 
-    public function favorite_shops()
-    {
-        return $this->belongsToMany(Shop::class, 'favorites', 'user_id', 'shop_id');
-    }
-
     public function is_favorite($shopId)
     {
         return $this->favorites()->where('shop_id', $shopId)->exists();
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
+    }
+
+    public function is_review($shopId)
+    {
+        return $this->reviews()->where('shop_id', $shopId)->exists();
     }
 }
