@@ -4,6 +4,7 @@ use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\FavoriteController;
 use App\Http\Controllers\ReservationController;
+use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShopController;
 use App\Http\Controllers\UserController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -57,5 +58,6 @@ Route::middleware(['auth','verified'])->group(function () {
   Route::put('/mypage/reservation/{shop}', [ReservationController::class, 'update'])->name('reservation.update');
   Route::post('/shops/{shop}/favorite', [FavoriteController::class, 'store'])->name('favorite.store');
   Route::delete('/shops/{shop}/unfavorite', [FavoriteController::class, 'destroy'])->name('favorite.destroy');
+  Route::post('/mypage/{shop}', [ReviewController::class, 'store'])->name('review.store');
   Route::get('/mypage', [UserController::class, 'index'])->name('mypage');
 });
