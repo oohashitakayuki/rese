@@ -1,19 +1,21 @@
 .shop-search {
   display: flex;
-  position: absolute;
-  top: 50px;
-  left: 900px;
+  justify-content: end;
+  position: relative;
+  bottom: 30px;
+  right: 55px;
 }
 
 .shop-list {
+  width: 100%;
   display: flex;
   flex-wrap: wrap;
 }
 
 .shop__item {
-  width: 265px;
-  margin: 10px;
-  border-radius: 10px;
+  width: 23%;
+  margin: 10px 12px 10px 0;
+  border-radius: 5px;
   overflow: hidden;
 }
 

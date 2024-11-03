@@ -3,7 +3,9 @@
 }
 
 .mypage__user-authentication {
-  margin-left: 520px;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
 }
 
 .mypage__container {
@@ -11,20 +13,35 @@
 }
 
 .reservation-list {
-  margin-left: 30px;
+  width: 45%;
+  margin-left: 20px;
+}
+
+.reservation-list__inner {
+  display: flex;
+  flex-direction: column;
 }
 
 .reservation-info {
-  width: 450px;
+  width: 100%;
   padding: 15px 0 20px 20px;
   margin-bottom: 20px;
   background: #3F5CF7;
+  border-radius: 5px;
 }
 
 .reservation-info__heading {
   display: flex;
   align-items: center;
   color: #fff;
+}
+
+.reservation-info__number {
+  margin-left: 25px;
+}
+
+.reservation-cancellation__button {
+  margin-left: 240px;
 }
 
 .reservation-cancellation__button-submit {
@@ -51,7 +68,7 @@
   color: #fff;
 }
 
-.reservation-info__change {
+.modal-open {
   padding: 5px 13px;
   text-decoration: none;
   color: #fff;
@@ -59,7 +76,9 @@
   border-radius: 5px;
 }
 
-.modal {
+.reservation-change__modal,
+.review-upload__modal,
+.qrcode-show__modal {
   z-index: 999;
   position: fixed;
   top: 0;
@@ -70,19 +89,25 @@
   text-align: center
 }
 
-.modal:not(:target) {
+.reservation-change__modal:not(:target),
+.review-upload__modal:not(:target),
+.qrcode-show__modal:not(:target) {
   opacity: 0;
   visibility: hidden;
   transition: opacity .3s, visibility .3s;
 }
 
-.modal:target {
+.reservation-change__modal:target,
+.review-upload__modal:target,
+.qrcode-show__modal:target {
   opacity: 1;
   visibility: visible;
   transition: opacity .4s, visibility .4s;
 }
 
-.modal::after {
+.reservation-change__modal::after,
+.review-upload__modal::after,
+.qrcode-show__modal::after {
   display: inline-block;
   height: 100%;
   margin-left: -.05em;
@@ -90,7 +115,8 @@
   content: ""
 }
 
-.modal .modal-window {
+.reservation-change__modal .reservation-change__modal-window,
+.review-upload__modal .review-upload__modal-window {
   box-sizing: border-box;
   display: inline-block;
   z-index: 20;
@@ -99,17 +125,33 @@
   max-width: 600px;
   padding: 30px 30px 15px;
   border-radius: 2px;
-  background: #fff;
+  background: #3F5CF7;
   box-shadow: 0 0 30px rgba(0, 0, 0, .6);
   vertical-align: middle
 }
 
-.modal .modal-window .modal-content {
+.qrcode-show__modal .qrcode-show__modal-window {
+  box-sizing: border-box;
+  display: inline-block;
+  z-index: 20;
+  position: relative;
+  width: 70%;
+  max-width: 600px;
+  padding: 30px 30px 15px;
+  border-radius: 2px;
+  vertical-align: middle
+}
+
+.reservation-change__modal .reservation-change__modal-window .reservation-change__modal-content,
+.review-upload__modal .review-upload__modal-window .review-upload__modal-content,
+.qrcode-show__modal .qrcode-show__modal-window .qrcode-show__modal-content {
   max-height: 80vh;
   overflow-y: auto;
 }
 
-.modal-overlay {
+.reservation-change__modal-overlay,
+.review-upload__modal-overlay,
+.qrcode-show__modal-overlay {
   z-index: 10;
   position: absolute;
   top: 0;
@@ -119,13 +161,14 @@
   background: rgba(0, 0, 0, .8)
 }
 
-.modal .modal-close {
+.reservation-change__modal .reservation-change__modal-close,
+.review-upload__modal .review-upload__modal-close {
   z-index: 20;
   position: absolute;
   top: 0;
   right: 0;
   width: 35px;
-  color: #95979c !important;
+  color: #fff;
   font-size: 20px;
   font-weight: 700;
   line-height: 35px;
@@ -134,8 +177,32 @@
   text-indent: 0
 }
 
-.modal .modal-close:hover {
-  color: #2b2e38 !important
+.reservation-change__modal .reservation-change__modal-close:hover,
+.review-upload__modal .review-upload__modal-close:hover {
+  color: #2b2e38;
+}
+
+.review-upload__star span {
+  display: flex;
+  flex-direction: row-reverse;
+  justify-content: center;
+}
+
+.review-upload__star input[type='radio'] {
+  display: none;
+}
+
+.review-upload__star label {
+  color: #D2D2D2;
+  font-size: 30px;
+  padding: 0 5px;
+  cursor: pointer;
+}
+
+.review-upload__star label:hover,
+.review-upload__star label:hover~label,
+.review-upload__star input[type='radio']:checked~label {
+  color: #F8C601;
 }
 
 .favorite-cancellation__button-submit {
@@ -147,7 +214,8 @@
 }
 
 .favorite-list {
-  margin-left: 90px;
+  width: 70%;
+  margin-left: 85px;
 }
 
 .favorite-list__inner {
@@ -156,8 +224,8 @@
 }
 
 .favorite__item {
-  width: 265px;
-  margin: 0 50px 20px 0;
-  border-radius: 10px;
+  width: 42%;
+  margin: 0 45px 20px 0;
+  border-radius: 5px;
   overflow: hidden;
 }

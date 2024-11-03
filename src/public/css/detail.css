@@ -20,7 +20,6 @@ select {
 
 .shop-profile {
   width: 45%;
-  margin-left: 12px;
 }
 
 .shop-profile__image {
@@ -37,7 +36,7 @@ select {
 }
 
 .reservation-form {
-  width: 40%;
+  width: 45%;
   height: 650px;
   margin-left: 80px;
   background: #3F5CF7;
@@ -81,11 +80,12 @@ select {
   color: #fff;
 }
 
-.reservation-form__submit {
+.reservation-form__button-submit {
   width: 100%;
   padding: 10px 0;
-  margin-top: 230px;
   color: #fff;
+  position: absolute;
+  top: 610px;
   background: #1B3FFF;
   border: none;
   cursor: pointer;
