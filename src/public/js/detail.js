@@ -19,4 +19,3 @@ document.addEventListener('DOMContentLoaded', function() {
     confirmNumber.textContent = numberSelect.options[numberSelect.selectedIndex].text;
   });
 });
-
