@@ -29,10 +29,15 @@ class ShopController extends Controller
         return view('index', compact('shops', 'areas', 'genres'));
     }
 
-    public function show($id)
+    public function show(Request $request, $id)
     {
         $shop = Shop::where('id',$id)->first();
 
-        return view('detail', compact('shop'));
+        $previousUrl = $request->headers->get('referer') ?? route('index');
+        if (strpos($previousUrl, url('/')) === false) {
+            $previousUrl = route('index');
+        }
+
+        return view('detail', compact('shop', 'previousUrl'));
     }
 }
