@@ -18,25 +18,25 @@
       <label for="drawer__input" class="drawer__open"><span></span></label>
       <nav class="nav__content">
       @auth
-        <ul class="nav__menu">
-          <li><a class="nav__item" href="/">Home</a></li>
-          <form class="form" action="/logout" method="post">
+      <ul class="nav__menu">
+        <li><a class="nav__item" href="/">Home</a></li>
+        <form class="form" action="/logout" method="post">
           @csrf
           <button class="nav__logout">Logout</button>
-          </form>
-          <li><a class="nav__item" href="/mypage">Mypage</a></li>
+        </form>
+        <li><a class="nav__item" href="/mypage">Mypage</a></li>
         </ul>
-        @endauth
+      @endauth
 
-        @guest
-        <ul class="nav__menu">
-          <li><a class="nav__item" href="/">Home</a></li>
-          <li><a class="nav__item" href="/register">Registration</a></li>
-          <li><a class="nav__item" href="/login">Login</a></li>
-        </ul>
-        @endguest
-        </nav>
-        <h1 class="header__heading">Rese</h1>
+      @guest
+      <ul class="nav__menu">
+        <li><a class="nav__item" href="/">Home</a></li>
+        <li><a class="nav__item" href="/register">Registration</a></li>
+        <li><a class="nav__item" href="/login">Login</a></li>
+      </ul>
+      @endguest
+      </nav>
+      <h1 class="header__heading">Rese</h1>
     </header>
 
     <main class=content>

@@ -13,9 +13,9 @@
     @csrf
     <div class="register-form__group">
       <div class="register-form__group-content">
-        <span class="material-icons">person</span><input class="register-form__input" type="text" name="name" value="{{ old('name') }}" placeholder="Username">
+        <span class="account-icon material-icons">person</span><input class="register-form__input" type="text" name="name" value="{{ old('name') }}" placeholder="Username">
       </div>
-      <div class="register-form__error">
+      <div class="register-form__error-message">
         @error('name')
         {{ $message }}
         @enderror
@@ -23,9 +23,9 @@
     </div>
     <div class="register-form__group">
       <div class="register-form__group-content">
-        <span class="material-icons">email</span><input class="register-form__input" type="email" name="email" value="{{ old('email') }}" placeholder="Email">
+        <span class="email-icon material-icons">email</span><input class="register-form__input" type="email" name="email" value="{{ old('email') }}" placeholder="Email">
       </div>
-      <div class="register-form__error">
+      <div class="register-form__error-message">
         @error('email')
         {{ $message }}
         @enderror
@@ -33,9 +33,9 @@
     </div>
     <div class="register-form__group">
       <div class="register-form__group-content">
-        <span class="material-icons">lock</span><input class="register-form__input" type="password" name="password" placeholder="Password">
+        <span class="password-icon material-icons">lock</span><input class="register-form__input" type="password" name="password" placeholder="Password">
       </div>
-      <div class="register-form__error">
+      <div class="register-form__error-message">
         @error('password')
         {{ $message }}
         @enderror
