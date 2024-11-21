@@ -3,6 +3,7 @@
 use App\Http\Controllers\Auth\LoginController;
 use App\Http\Controllers\Auth\RegisterController;
 use App\Http\Controllers\FavoriteController;
+use App\Http\Controllers\PaymentController;
 use App\Http\Controllers\ReservationController;
 use App\Http\Controllers\ReviewController;
 use App\Http\Controllers\ShopController;
@@ -59,5 +60,6 @@ Route::middleware(['auth','verified'])->group(function () {
   Route::post('/shops/{shop}/favorite', [FavoriteController::class, 'store'])->name('favorite.store');
   Route::delete('/shops/{shop}/unfavorite', [FavoriteController::class, 'destroy'])->name('favorite.destroy');
   Route::post('/mypage/{shop}', [ReviewController::class, 'store'])->name('review.store');
+  Route::post('/payment', [PaymentController::class, 'payment'])->name('payment');
   Route::get('/mypage', [UserController::class, 'index'])->name('mypage');
 });
