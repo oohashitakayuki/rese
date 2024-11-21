@@ -20,6 +20,7 @@ body {
   display: flex;
   height: 40px;
   width: 40px;
+  box-shadow: 2px 2px 2px #a0a0a0;
   border-radius: 6px;
   background: #3F5CF7;
   justify-content: center;
@@ -128,7 +129,7 @@ body {
 }
 
 .shop__content {
-  padding: 10px;
+  padding: 15px 10px 15px 18px;
   background: #fff;
 }
 
@@ -136,22 +137,26 @@ body {
   display: inline;
 }
 
-.shop__area {
-  display: inline-block;
+.shop__tag {
+  margin-top: 3px;
+  font-size: 12px;
 }
 
+.shop__area,
 .shop__genre {
-  display: inline-block;
+  display: inline;
 }
 
 .shop__service {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  margin-top: 8px;
 }
 
 .shop-detail__link {
   padding: 5px 13px;
+  font-size: 13px;
   text-decoration: none;
 }
 

@@ -14,32 +14,55 @@ select {
   width: 100%;
 }
 
-.shop-detail__container {
+.shop-detail__inner {
   display: flex;
 }
 
 .shop-profile {
   width: 45%;
+  margin-top: 30px;
+}
+
+.shop-profile__heading {
+  display: flex;
+  align-items: center;
+}
+
+.back {
+  margin-right: 10px;
+  padding: 1px 10px;
+  color: #000;
+  background: #fff;
+  border-radius: 5px;
+  box-shadow: 2px 2px 2px #a0a0a0;
+  text-decoration: none;
+}
+
+.shop-profile__name {
+  font-size: 20px;
 }
 
 .shop-profile__image {
   width: 100%;
 }
 
-.shop-profile__tag {
-  display: inline-block;
-  font-size: 16.5px;
+.shop-profile__tag,
+.shop-profile__about {
+  margin-top: 25px;
+  font-size: 14.2px;
 }
 
-.shop-profile__about {
-  font-size: 16.5px;
+.shop-profile__area,
+.shop-profile__genre {
+  display: inline;
 }
 
 .reservation-form {
   width: 45%;
-  height: 650px;
+  height: 620px;
   margin-left: 80px;
   background: #3F5CF7;
+  box-shadow: 2px 2px 2px #a0a0a0;
   border-radius: 5px;
   position: relative;
   bottom: 45px;
@@ -56,17 +79,48 @@ select {
   flex-direction: column;
 }
 
-.reservation-form__group {
-  margin: 0 50px 12px 25px;
+.reservation-form__date,
+.reservation-form__time,
+.reservation-form__number {
+  margin: 0 50px 5px 25px;
+  position: relative;
+}
+
+.reservation-form__time::after,
+.reservation-form__number::after {
+  position: absolute;
+  top: 15px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border-top: 8px solid #e5e5e5;
+  border-right: 5px solid transparent;
+  border-left: 5px solid transparent;
+  content: "";
+  transform: translateY(-50%);
+  pointer-events: none;
+  z-index: 10;
+}
+
+.reservation-form__time-select,
+.reservation-form__number-select {
+  appearance: none;
+}
+
+.reservation-form__error-message {
+  margin: 7px 0 0 5px;
+  color: #fff;
 }
 
 .reservation-form__confirm {
   display: inline-block;
-  padding: 20px 0 20px 20px;
+  padding: 10px 0 10px 20px;
   margin: 7px 60px 20px 25px;
   background: #617AFF;
+  font-size: 15px;
   border-radius: 5px;
   border-collapse: separate;
+  border-spacing: 0 7px;
 }
 
 .reservation-form__confirm th {
@@ -80,13 +134,13 @@ select {
   color: #fff;
 }
 
-.reservation-form__button-submit {
+.reservation-form__button {
   width: 100%;
-  padding: 10px 0;
+  padding: 15px 0;
   color: #fff;
-  position: absolute;
-  top: 610px;
   background: #1B3FFF;
+  position: absolute;
+  top: 570px;
   border: none;
   cursor: pointer;
 }

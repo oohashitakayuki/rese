@@ -1,9 +1,10 @@
 .register-form {
   display: flex;
-  width: 27%;
+  width: 33%;
   margin: 130px auto;
   flex-direction: column;
   background: #fff;
+  box-shadow: 2px 2px 2px #a0a0a0;
   border-radius: 5px;
   overflow: hidden;
 }
@@ -14,8 +15,12 @@
   background: #3F5CF7;
 }
 
+.register-form__inner {
+  margin-top: 5px;
+}
+
 .register-form__group {
-  margin: 17px 10px 17px 30px;
+  margin: 17px 10px 17px 25px;
 }
 
 .register-form__group-content {
@@ -24,19 +29,20 @@
 }
 
 .register-form__input {
-  width: 80%;
+  width: 85%;
   margin-left: 7px;
+  font-size: 15px;
   border: none;
   outline: none;
   border-bottom: 1px solid #000;
 }
 
-.register-form__error {
-  margin-left: 30px;
+.register-form__error-message {
+  margin: 2px 0 0 30px;
 }
 
 .register-form__button {
-  margin: 18px 36px 18px 0;
+  margin: 18px 31px 18px 0;
   text-align: right;
 }
 
