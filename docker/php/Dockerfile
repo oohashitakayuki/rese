@@ -17,4 +17,6 @@ RUN apt-get update && apt-get install -y \
   && docker-php-ext-configure gd --with-freetype --with-jpeg \
   && docker-php-ext-install -j$(nproc) gd
 
+RUN ln -sf /usr/share/zoneinfo/Asia/Tokyo /etc/localtime && echo "Asia/Tokyo" > /etc/timezone
+
 WORKDIR /var/www
