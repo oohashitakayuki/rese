@@ -5,6 +5,7 @@ namespace App\Console\Commands;
 use App\Models\Reservation;
 use App\Mail\ReminderEmail;
 use Illuminate\Console\Command;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Mail;
 use Carbon\Carbon;
 
@@ -41,11 +42,14 @@ class SendReminders extends Command
      */
     public function handle()
     {
-        $today = Carbon::today()->format('Y-m-d');
-        $reservations = Reservation::where('date', $today)->get();
+        $today = Carbon::today();
+        $reservations = Reservation::whereDate('date', $today)->get();
 
         foreach ($reservations as $reservation) {
             Mail::to($reservation->user->email)->send(new ReminderEmail($reservation));
+            Log::info("リマインドメール送信: {$reservation->user->email}");
         }
+
+        return 0;
     }
 }
