@@ -2,7 +2,7 @@
 
 日本各地の飲食店情報を掲載し、お店探しやネット予約などのサービスをご利用いただけます。
 
-![image](https://github.com/user-attachments/assets/b44c90ca-e2d4-4a57-8a0e-f3c19096824a)
+![image](https://github.com/user-attachments/assets/0147ccb6-825a-445a-8972-31cc6bbba906)
 
 ## 作成した目的
 
