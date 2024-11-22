@@ -16,7 +16,6 @@
         @endforeach
       </select>
     </div>
-    <span class="shop-search__border-left"></span>
     <div class="shop-search__genre">
       <select class="shop-search__genre-select" name="genre_id">
         <option value="">All genre</option>
@@ -25,10 +24,8 @@
         @endforeach
       </select>
     </div>
-    <span class="shop-search__border-right"></span>
-    <span class="search-icon material-icons">search</span>
     <div class="shop-search__keyword">
-      <input class="shop-search__keyword-input" type="search" name="keyword" placeholder="       Search ..." value="{{ old('keyword') }}">
+      <input class="shop-search__keyword-input" type="search" name="keyword" placeholder="Search ..." value="{{ old('keyword') }}">
     </div>
   </form>
 
