@@ -47,6 +47,7 @@
 
 カレントディレクトリから以下のようなディレクトリ構成を作成します。
 
+```
 rese
 ├── docker
 │ ├── mysql
@@ -59,7 +60,9 @@ rese
 │ └── php.ini
 ├── docker-compose.yml
 └── src
+```
 
+```
 $ mkdir rese
 $ cd rese
 $ mkdir docker src
@@ -73,6 +76,7 @@ $ touch php/Dockerfile
 $ touch php/php.ini
 $ cd ../
 $ tree .
+```
 
 2. docker-compose.yml の作成
 
@@ -198,14 +202,27 @@ default-time-zone = 'Asia/Tokyo'
 
 **Laravel 環境構築**
 
-1. `docker-compose exec php bash`
-   コマンドラインで上記のコマンドを実行し、PHP コンテナにログインしてください。
-2. `composer -v`
-   PHP コンテナ内で上記のコマンドを実行し、Composer がインストールできているか確認してください。
-3. `composer create-project "laravel/laravel=8.*" . --prefer-dist`
-   PHP コンテナ内で上記の composer コマンドを実行し、Laravel のプロジェクトを作成してください。
+1. PHP コンテナにログイン
+
+```
+docker-compose exec php bash
+```
+
+2. Composer がインストールされているか確認する
+
+```
+composer -v
+```
+
+3. Laravel プロジェクトの作成
+
+```
+composer create-project "laravel/laravel=8.*" . --prefer-dist
+```
+
 4. 時間設定の編集
-   ./src/config/app.php を下記のように修正します。
+
+./src/config/app.php を下記のように修正します。
 
 修正前
 
