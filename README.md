@@ -1,6 +1,6 @@
 # rese(飲食店予約サービス)
 
-日本各地の飲食店情報を掲載し、お店探しやネット予約などのサービスをご利用いただけるアプリとなっております。
+日本各地の飲食店情報を掲載しており、お店探しやネット予約などのサービスをご利用いただけるアプリとなっております。
 
 ![image](https://github.com/user-attachments/assets/b44c90ca-e2d4-4a57-8a0e-f3c19096824a)
 
@@ -28,9 +28,9 @@
 - 飲食店エリア検索機能
 - 飲食店ジャンル検索機能
 - 飲食店キーワード検索機能
-- QR コード表示機能(備考：QR コードの内容は各飲食店の詳細情報。)
-- リマインダー機能(備考：予約情報の通知はメール形式。コマンド入力による手動での実行ならばメールは送信できる。自動送信は不可。)
-- 決済機能(備考：決済画面の立ち上げのみ。決済の実行は不可。)
+- QR コード表示機能(備考:QR コードの内容は各飲食店の詳細情報。)
+- リマインダー機能(備考:予約情報の通知はメール形式。コマンド入力による手動での実行ならばメールは送信できる。自動送信は不可。)
+- 決済機能(備考:決済画面の立ち上げのみ。決済の実行は不可。)
 
 ## 使用技術(実行環境)
 
@@ -198,11 +198,17 @@ default-time-zone = 'Asia/Tokyo'
 ```
 
 6. DockerDesktop アプリを立ち上げる
-7. `docker-compose up -d --build`
+7. docker-compose コマンドで開発環境を構築する
+
+```
+docker-compose up -d --build
+```
 
 **Laravel 環境構築**
 
 1. PHP コンテナにログイン
+
+コマンドライン上で以下の docker-compose コマンドを実行し、PHP コンテナにログインする。
 
 ```
 docker-compose exec php bash
@@ -210,11 +216,15 @@ docker-compose exec php bash
 
 2. Composer がインストールされているか確認する
 
+PHP コンテナ内で以下の composer コマンドを実行し、Composer がインストールされているか確認します。
+
 ```
 composer -v
 ```
 
-3. Laravel プロジェクトの作成
+3. Laravel のプロジェクトを作成
+
+PHP コンテナ内で以下の composer コマンドを実行し、Laravel のプロジェクトを作成します。
 
 ```
 composer create-project "laravel/laravel=8.*" . --prefer-dist
@@ -222,7 +232,7 @@ composer create-project "laravel/laravel=8.*" . --prefer-dist
 
 4. 時間設定の編集
 
-./src/config/app.php を下記のように修正します。
+./src/config/app.php を以下のように修正します。
 
 修正前
 
@@ -267,7 +277,7 @@ RUN apt-get update && apt-get install -y \
   && docker-php-ext-install -j$(nproc) gd
 ```
 
-PHP コンテナ内で以下の composer コマンドを実行し、simple-qrcode をインストールしてください。
+PHP コンテナ内で以下の composer コマンドを実行し、simple-qrcode をインストールします。
 
 ```
 composer require simplesoftwareio/simple-qrcode
@@ -275,7 +285,7 @@ composer require simplesoftwareio/simple-qrcode
 
 2. Laravel Cashier のインストール
 
-PHP コンテナ内で以下の composer コマンドを実行し、Laravel Cashier をインストールしてください。
+PHP コンテナ内で以下の composer コマンドを実行し、Laravel Cashier をインストールします。
 
 ```
 composer require laravel/cashier
