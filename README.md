@@ -248,6 +248,10 @@ php artisan migrate
 php artisan db:seed
 ```
 
+## ER 図
+
+![alt](erd.png)
+
 ## パッケージのインストール
 
 1. simple-qrcode のインストール
@@ -264,12 +268,18 @@ RUN apt-get update && apt-get install -y \
 ```
 
 PHP コンテナ内で以下の composer コマンドを実行し、simple-qrcode をインストールしてください。
-`composer require simplesoftwareio/simple-qrcode`
+
+```
+composer require simplesoftwareio/simple-qrcode
+```
 
 2. Laravel Cashier のインストール
 
 PHP コンテナ内で以下の composer コマンドを実行し、Laravel Cashier をインストールしてください。
-`composer require laravel/cashier`
+
+```
+composer require laravel/cashier
+```
 
 ## URL
 
