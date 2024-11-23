@@ -13,7 +13,8 @@
     @csrf
     <div class="login-form__group">
       <div class="login-form__group-content">
-        <span class="email-icon material-icons">email</span><input class="login-form__input" type="email" name="email" value="{{ old('email') }}"  placeholder="Email">
+        <span class="email-icon material-icons">email</span>
+        <input class="login-form__input" type="email" name="email" value="{{ old('email') }}"  placeholder="Email">
       </div>
       <div class="login-form__error-message">
         @error('email')
@@ -23,7 +24,8 @@
     </div>
     <div class="login-form__group">
       <div class="login-form__group-content">
-        <span class="password-icon material-icons">lock</span><input class="login-form__input" type="password" name="password"  placeholder="Password">
+        <span class="password-icon material-icons">lock</span>
+        <input class="login-form__input" type="password" name="password"  placeholder="Password">
       </div>
       <div class="login-form__error-message">
         @error('password')

@@ -13,7 +13,7 @@
   <div class="shop-detail__inner">
     <div class="shop-profile">
       <div class="shop-profile__heading">
-        <a class="back" href="{{ $previousUrl }}">&lt;</a>
+        <a class="shop-profile__back-button" href="{{ $previousUrl }}">&lt;</a>
         <h3 class="shop-profile__name">{{ $shop->name }}</h3>
       </div>
       <img class="shop-profile__image" src="{{ $shop->image }}" alt="">
