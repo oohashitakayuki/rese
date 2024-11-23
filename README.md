@@ -2,7 +2,7 @@
 
 日本各地の飲食店情報を掲載し、お店探しやネット予約などのサービスをご利用いただけます。
 
-![image](https://github.com/user-attachments/assets/0147ccb6-825a-445a-8972-31cc6bbba906)
+![rese](https://github.com/user-attachments/assets/ed76de80-84fd-4fd0-9f07-c0fcee9d01dc)
 
 ## 作成した目的
 
@@ -29,8 +29,8 @@
 - 飲食店ジャンル検索機能
 - 飲食店キーワード検索機能
 - QR コード表示機能(備考:QR コードの内容は各飲食店の詳細情報。)
-- リマインダー機能(備考:予約情報の通知はメール形式。コマンド入力による手動での実行ならばメールの送信は可能。自動送信は不可。)
-- 決済機能(備考:決済画面の立ち上げのみ。決済の実行は不可。)
+- リマインダー機能(備考:予約情報の通知はメール形式。)
+- 決済機能
 
 ## 使用技術(実行環境)
 
@@ -257,6 +257,44 @@ php artisan migrate
 ```bash
 php artisan db:seed
 ```
+
+7. メール送信の設定
+
+メール認証機能を実装する場合、./src/.env の以下の項目を設定します。
+
+```
+MAIL_MAILER=smtp
+MAIL_HOST=mailhog
+MAIL_PORT=1025
+MAIL_USERNAME=null
+MAIL_PASSWORD=null
+MAIL_ENCRYPTION=null
+MAIL_FROM_ADDRESS=null
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+Mailtrap などのメール送信テストツールを利用する場合は、前述の項目にテストツールから取得した情報を以下のように入力します。
+
+```
+MAIL_MAILER=smtp
+MAIL_HOST=sandbox.smtp.mailtrap.io
+MAIL_PORT=2525
+MAIL_USERNAME=(ユーザー名)
+MAIL_PASSWORD=(パスワード)
+MAIL_ENCRYPTION=tls
+MAIL_FROM_ADDRESS=xxx@example.com
+MAIL_FROM_NAME="${APP_NAME}"
+```
+
+キャッシュをクリアします。
+
+```
+php artisan config:clear
+```
+
+## テーブル設計
+
+![table](https://github.com/user-attachments/assets/ceda80f8-6117-48b3-968c-7ad717c72544)
 
 ## ER 図
 
